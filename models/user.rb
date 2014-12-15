@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
-	Sinatra::SimpleAuthentication.require_adapter
-	include Sinatra::SimpleAuthentication::Models::ActiveRecord::Adapter
+	#relationships
+	has_many :forums
+
+Sinatra::SimpleAuthentication.require_adapter
+include Sinatra::SimpleAuthentication::Models::ActiveRecord::Adapter
 end
