@@ -1,6 +1,7 @@
 require_relative '../app.rb'
 
 Question.delete_all
+Answer.delete_all
 
 	questions = Question.create(
 		[
@@ -24,9 +25,7 @@ Question.delete_all
 			{question: "How many U.S. Senators are there?", wrong_answer_one: "Fifty (50)", wrong_answer_two: "Two hundred (200)"},
 			{question: "We elect a U.S. Senator for how many years?", wrong_answer_one: "Two (2)", wrong_answer_two: "Four (4)"},
 			{question: "The House of Representatives has how many voting members?", wrong_answer_one: "One hundred (100)", wrong_answer_two: "Fifty (50)"},
-			{question: "We elect a U.S. Representative for how many years?", wrong_answer_one: "Four (4)", wrong_answer_two: "Six (6)"}
-			{question: "Name your U.S. Representative.", wrong_answer_one: nil, wrong_answer_two: nil},
-			{question: "Who is one of your U.S. Senators now?", wrong_answer_one: nil, wrong_answer_two: nil},
+			{question: "We elect a U.S. Representative for how many years?", wrong_answer_one: "Four (4)", wrong_answer_two: "Six (6)"},
 			{question: "Who does a U.S. Senator represent?", wrong_answer_one: "Everyone in his/her district.", wrong_answer_two: "The entire nation."},
 			{question: "Why do some states have more Representatives than other states?", wrong_answer_one: "Because of the state's wealth - More money means more representatives.", wrong_answer_two: "Because of the state's age - Older states have more representation"},
 			{question: "We elect a President for how many years?", wrong_answer_one: "Six (6)", wrong_answer_two: "Two (2)"},
@@ -46,11 +45,8 @@ Question.delete_all
 			{question: "Who is the Chief Justice of the United States now?", wrong_answer_one: "Antonin Scalia", wrong_answer_two: "Elena Kagan"},
 			{question: "Under our Constitution, some powers belong to the federal government.  What is one power of the federal government?", wrong_answer_one: "Provide safety (fire departments", wrong_answer_two: "Provide schooling and education"},
 			{question: "Under our Constitution, some powers belong to states.  What is one power of the states?", wrong_answer_one: "To print money", wrong_answer_two: "To make treaties"},
-			{question: "Who is the Governor of your state now?", wrong_answer_one: nil, wrong_answer_two: nil},
-			{question: "What is the capital of your state?", wrong_answer_one: nil, wrong_answer_two: nil},
 			{question: "What are the two major political parties in the United States?", wrong_answer_one: "Green", wrong_answer_two: "Liberterian"},
 			{question: "What is the political party of the President now?", wrong_answer_one: "Republican", wrong_answer_two: "Socialist"},
-			{question: "What is the name of the Speaker of the House of Representatives now?", wrong_answer_one: nil, wrong_answer_two: nil},
 			{question: "There are four amendments to the Constitution about who can vote.  Describe one of them.", wrong_answer_one: "Citzens fourteen (14) and older can vote.", wrong_answer_two: "Undocumented immigrants may vote."},
 			{question: "What is one responsibility that is only for United States citizens?", wrong_answer_one: "Owning property.", wrong_answer_two: "Serving in the military."},
 			{question: "Name one right only for United States citizens.", wrong_answer_one: "Owning land.", wrong_answer_two: "Free speech."},
@@ -69,6 +65,87 @@ Question.delete_all
 			{question: "When was the Declaration of Independence adopted?", wrong_answer_one: "1861", wrong_answer_two: "1492"},
 			{question: "There were 13 original states.  Name three.", wrong_answer_one: "Michigan", wrong_answer_two: "Florida"},
 			{question: "What happened at the Constitutional Convention?", wrong_answer_one: "The Founding Fathers wrote the Federalist Papers", wrong_answer_two: "The Founding Fathers wrote the Declaration of Independence"},
-			
-		]
+			{question: "When was the Constitution written?", wrong_answer_one: "1776", wrong_answer_two: "1864"},
+			{question: "The Federalist Papers supported the passage of the U.S. Constitution.  Name on of the writers.", wrong_answer_one: "Abraham Lincoln", wrong_answer_two: "George Washington"},
+			{question: "What is one theing Benjamin Franklin is famous for?", wrong_answer_one: "Being the 2nd President.", wrong_answer_two: "First General of the U.S. Army"},
+			{question: "Who is the 'Father of our Country'?", wrong_answer_two: "Barack Obama", wrong_answer_two: "Abraham Lincoln"},
+			{question: "Who was the first President?", wrong_answer_one: "Benjamin Franklin", wrong_answer_two: "Abraham Lincoln"},
+			{question: "What territory did the United States buy from France in 1803?", wrong_answer_one: "Alaska", wrong_answer_two: "California"},
+			{question: "Name one war fought by the United States in the 1800s.", wrong_answer_one: "World War I", wrong_answer_two: "Revolutionary War"},
+			{question: "Name the U.S. war between the North and the South", wrong_answer_one: "The Spanish-American War", wrong_answer_two: "The Vietnam War"},
+			{question: "Name one problem that led to the Civil War", wrong_answer_one: "British Imperialism", wrong_answer_two: "Canada invaded New York."},
+			{question: "What was one important thing that Abraham Lincoln did?", wrong_answer_one: "Wrote the Declaration of Independence.", wrong_answer_two: "Fought in the Revolutionary War."},
+			{question: "What did the Emancipation Proclamation do?", wrong_answer_one: "Gave women the right to vote.", wrong_answer_two: "Started the Revolutionary War."},
+			{question: "What did Susan B. Anthony do?", wrong_answer_one: "Made the first U.S. flag", wrong_answer_two: "First woman President of the U.S."},
+			{question: "Name one war fought by the United States in the 1900s.", wrong_answer_one: "Civil War", wrong_answer_two: "Mexican-American War"},
+			{question: "Who was President during World War I?", wrong_answer_one: "John F. Kennedy", wrong_answer_two: "Thomas Jefferson"},
+			{question: "Who was President during the Great Depression and World War II?", wrong_answer_one: "Richard Nixon", wrong_answer_two: "Theodore Roosevelt"},
+			{question: "Who did the United States fight in World War II?", wrong_answer_one: "Mexico, Brazil and Argentina", wrong_answer_two: "United Kingdom, France, and Belgium"},
+			{question: "Before he was President, Eisenhower was a general.  What war was he in?", wrong_answer_one: "Civil War", wrong_answer_two: "World War I"},
+			{question: "During the Cold War, what was the main concern of the United States?", wrong_answer_one: "Greed", wrong_answer_two: "Global Warming"},
+			{question: "What movement tried to end racial discrimination?", wrong_answer_one: "Racial Justice Movement", wrong_answer_two: "Freedom and Equality Movement"},
+			{question: "What did Martin Luther King, Jr. do?", wrong_answer_one: "First Black President of the U.S.", wrong_answer_two: "First Black general of the U.S. Army"},
+			{question: "What major event happened on September 11, 2001, in the United States?", wrong_answer_one: "The Yankees won the World Series", wrong_answer_two: "The U.S. turned 200 years old"},
+			{question: "Name one American Indian tribe in the United States.", wrong_answer_one: "Aztec", wrong_answer_two: "Brahma"},
+			{question: "Name one of the two longest rivers in the United States", wrong_answer_one: "Rio Grande", wrong_answer_two: "Colorado"},
+			{question: "What ocean is on the West Coast of the United States?", wrong_answer_one: "Atlantic", wrong_answer_two: "Indian"},
+			{question: "What ocean is on the East Cost of the United States?", wrong_answer_one: "Pacific", wrong_answer_two: "Arctic"},
+			{question: "Name one U.S. territory", wrong_answer_one: "Panama", wrong_answer_two: "Aruba"},
+			{question: "Name one state that borders Canada.", wrong_answer_one: "Maryland", wrong_answer_two: "Missouri"},
+			{question: "Name one state that borders Mexico", wrong_answer_one: "Florida", wrong_answer_two: "Nevada"},
+			{question: "What is the capital of the United States?", wrong_answer_one: "New York City", wrong_answer_two: "Philadelphia"},
+			{question: "Where is the Statue of Liberty?", wrong_answer_one: "Washington, DC", wrong_answer_two: "Boston"},
+			{question: "Why does the flag have 13 stripes?", wrong_answer_one: "Because there were 13 Founding Fathers.", wrong_answer_two: "There were 13 soldiers killed during the Revolutionary War"},
+			{question: "Why does the flag have 50 stars?", wrong_answer_one: "Because there are 50 Senators", wrong_answer_two: "Because there were 50 original colonies."},
+			{question: "What is the name of the national anthem?", wrong_answer_one: "Battle Hymn of the Republic", wrong_answer_two: "America the Beautiful"},
+			{question: "When do we celebrate Independence Day?", wrong_answer_one: "July 13", wrong_answer_two: "May 25"},
+			{question: "Name two national U.S. holidays.", wrong_answer_one: "Easter", wrong_answer_two: "Eid"}
+		])
 	
+
+	answers = Answer.create(
+		[
+			{answer: "The Constitution", question_id: 1},
+			{answer: "Sets up the government.", question_id: 2},
+			{answer: "Defines the government.", question_id: 2},
+			{answer: "Protects basic rights of Americans.", question_id: 2},
+			{answer: "We the People", question_id: 3},
+			{answer: "A change or addition to the Constitution.", question_id: 4},
+			{answer: "The Bill of Rights", question_id: 5},
+			{answer: "Speech", question_id: 6},
+			{answer: "Religion", question_id: 6},
+			{answer: "Assembly", question_id: 6},
+			{answer: "Press", question_id: 6},
+			{answer: "Petition the government", question_id: 6},
+			{answer: "Twenty-seven (27)", question_id: 7},
+			{answer: "Announced our independence from Great Britain", question_id: 8},
+			{answer: "Life", question_id: 9},
+			{answer: "Liberty", question_id: 9},
+			{answer: "Pursuit of Happiness", question_id: 9},
+			{answer: "You can practice any religion, or not practice a religion", question_id: 10},
+			{answer: "Capitalist economy", question_id: 11},
+			{answer: "Everyone (including the government) must follow the law.", question_id: 12},
+			{answer: "Congress / Legislative", question_id: 13},
+			{answer: "President / Executive", question_id: 13},
+			{answer: "The Courts / Judicial", question_id: 13},
+			{answer: "Checks and Balances / Separation of Powers", question_id: 14},
+			{answer: "The President", question_id: 15},
+			{answer: "Congress", question_id: 16},
+			{answer: "The Senate and House of Representatives", question_id: 17},
+			{answer: "One hundred (100)", question_id: 18},
+			{answer: "Six (6)", question_id: 19},
+			{answer: "Four hundred thirty-five (435)", question_id: 20},
+			{answer: "Two (2)", question_id: 21},
+			{answer: "All people of the state", question_id: 22},
+			{answer: "Because of the state's population - Larger population means more representatives", question_id: 23},
+			{answer: "Four (4)", question_id: 24},
+			{answer: "November", question_id: 25},
+			
+
+
+
+		]
+
+
+
+

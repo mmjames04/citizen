@@ -5,6 +5,8 @@ require 'sinatra/simple-authentication'
 
 require_relative './models/user'
 require_relative './models/question'
+require_relative './models/answer'
+require_relative './models/forum'
 require_relative './config/environments'
 
 Sinatra::SimpleAuthentication.configure do |c|
