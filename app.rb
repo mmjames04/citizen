@@ -32,3 +32,23 @@ get '/' do
 	erb :index
 end
 
+get '/quiz' do
+	erb :quiz
+end
+
+get '/forum' do
+	erb :forum
+end
+
+
+get '/question' do
+	erb :question
+end
+
+get '/wrong_answer' do
+	erb :wrong_answer 
+end
+
+get '/right_answer' do
+	erb :right_answer
+end
