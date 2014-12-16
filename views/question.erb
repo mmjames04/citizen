@@ -1,11 +1,11 @@
 <p>Question </p>
 
 
-<%= @current_question.first.question %>
+<%= @current_question.question %>
+
+Display one correct answer and two wrong answers, each linked to the answer page.
 
 
-<a href='/wrong_answer'> <%= @current_question.first.wrong_answer_one %> </a>
-<a href='/right_answer'>right answer</a>
-<a href='/wrong_answer'> <%= @current_question.first.wrong_answer_two %> </a>
+
 
 <a href='/quiz'>Quit</a>

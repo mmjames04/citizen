@@ -10,6 +10,7 @@ require_relative './models/answer'
 require_relative './models/forum'
 require_relative './config/environments'
 
+
 Sinatra::SimpleAuthentication.configure do |c|
     c.use_password_confirmation = true
     c.min_password_length = 6
@@ -50,8 +51,8 @@ end
 
 
 get '/question' do
-	@the_question = Question.all
-	@current_question = Question.order("RANDOM()")
+	@current_question = Question.order("RANDOM()").first
+	@answers = Answer.all
 	erb :question
 end
 
