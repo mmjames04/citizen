@@ -28,7 +28,6 @@ end
 
 register Sinatra::SimpleAuthentication
 
-binding.pry
 
 get '/' do 
 	login_required
@@ -51,6 +50,8 @@ end
 
 
 get '/question' do
+	@the_question = Question.all
+	@current_question = Question.order("RANDOM()")
 	erb :question
 end
 
