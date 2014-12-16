@@ -2,8 +2,24 @@
 
 <p>Welcome to the Citizenprep Forum.  Leave questions, answers, notes of encouragement and advice to others in the Citizenprep community.  More instructions on how to post.</p>
 
-<label>Input box to post.</label>
+<form action="" method="post">
+	<label for="POST-name">Enter your post:</label>
+	<input id="POST-name" type="text" name="forum">
+	<input type="submit" value="Save">
+</form>
 
-<input type="text" name="post" value="Type your post here">
 
 <p>Display all posts in descending order (newest on top)</p>
+
+<ul>
+	<% @forums.each do |forum| %>
+		<li>
+			<% poster = User.find(forum.user_id) %>
+			<% user_poster = poster.email.split('@') %>
+			<%= user_poster.first %>
+			<%= forum.created_at %>
+			<%= forum.post %>
+		</li>
+		
+		<% end %>
+</ul>

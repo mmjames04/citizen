@@ -2,6 +2,7 @@ require 'sinatra'
 require 'sinatra/reloader'
 require 'sinatra/activerecord'
 require 'sinatra/simple-authentication'
+require 'pry'
 
 require_relative './models/user'
 require_relative './models/question'
@@ -27,6 +28,8 @@ end
 
 register Sinatra::SimpleAuthentication
 
+binding.pry
+
 get '/' do 
 	login_required
 	erb :index
@@ -37,7 +40,13 @@ get '/quiz' do
 end
 
 get '/forum' do
+	@forums = Forum.all
 	erb :forum
+end
+
+post '/forum' do
+	input = Forum.create(post: params[:forum], user_id: current_user.id)
+	redirect '/forum'
 end
 
 
