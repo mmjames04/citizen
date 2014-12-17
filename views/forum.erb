@@ -13,13 +13,18 @@
 
 <ul>
 	<% @forums.each do |forum| %>
-		<li>
+		<div>
+			<li>
 			<% poster = User.find(forum.user_id) %>
 			<% user_poster = poster.email.split('@') %>
 			<%= user_poster.first %>
-			<%= forum.created_at %>
+			</li>
+			<li>
+			<%= Kronic.format(forum.created_at) %>
+			</li>
+			<li>
 			<%= forum.post %>
-		</li>
-		
+			</li>
+		</div>
 		<% end %>
 </ul>

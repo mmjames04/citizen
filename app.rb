@@ -3,6 +3,7 @@ require 'sinatra/reloader'
 require 'sinatra/activerecord'
 require 'sinatra/simple-authentication'
 require 'pry'
+require 'kronic'
 
 require_relative './models/user'
 require_relative './models/question'
@@ -56,10 +57,8 @@ get '/question' do
 	erb :question
 end
 
-get '/wrong_answer' do
-	erb :wrong_answer 
-end
-
-get '/right_answer' do
-	erb :right_answer
+get '/:answer.id' do
+	@answer = Question.find(params[:answer.id])
+	@question = @answer.question
+	erb :answer
 end

@@ -3,9 +3,9 @@
 
 <%= @current_question.question %>
 
-Display one correct answer and two wrong answers, each linked to the answer page.
-
-
+<% Answer.where(question_id: @current_question.id).find_each do |answer| %>
+<a href='/<%= answer.id %>'> <%= answer.answer %> </a>
+<% end %>
 
 
 <a href='/quiz'>Quit</a>
