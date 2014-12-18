@@ -45,7 +45,7 @@ get '/forum' do
 end
 
 post '/forum' do
-	input = Forum.create(post: params[:forum], user_id: current_user.id)
+	textarea = Forum.create(post: params[:forum], user_id: current_user.id)
 	redirect '/forum'
 end
 
