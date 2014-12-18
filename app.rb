@@ -66,4 +66,32 @@ get '/question/:answer_id' do
 	erb :answer
 end
 
+get '/edit/:forum_id' do
+    login_required
+    params[:forum_id]
+    erb :edit
+end
+
+put '/edit/:forum_id' do
+    login_required
+    @post = Forum.find(params[:forum_id])
+    @post.update(:post => params[:forum])
+    redirect '/forum'
+end
+
+get '/delete/:forum_id' do
+    login_required
+    params[:forum_id]
+    erb :delete
+end
+
+post '/delete/:forum_id' do
+    login_required
+    @post = Forum.find(params[:forum_id])
+    @post.destroy
+    redirect '/forum'
+end
+
+
+
 

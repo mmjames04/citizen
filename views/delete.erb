@@ -1,0 +1,9 @@
+<% @post = Forum.find(params[:forum_id]) %>
+
+<h1>Delete your post?</h1>
+
+<form method="post" action="/delete/<%= @post.id %>">
+<%= @post.post %>
+	<input type="hidden" name="_method" value="destroy">
+	<button type="submit">Delete</button>
+</form>

@@ -1,0 +1,11 @@
+<% @post = Forum.find(params[:forum_id]) %>
+
+<h1>Edit your post...</h1>
+
+<form method="post" action="/edit/<%= @post.id %>">
+<textarea id="POST-name" name="forum" cols="25" rows="5">
+<%= @post.post %>
+</textarea><br>
+	<input type="hidden" name="_method" value="put">
+	<button type="submit">Update</button>
+</form>
