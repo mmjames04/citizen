@@ -36,27 +36,32 @@ get '/' do
 end
 
 get '/quiz' do
-	erb :quiz
+	login_required
+    erb :quiz
 end
 
 get '/forum' do
+    login_required
 	@forums = Forum.all
 	erb :forum
 end
 
 post '/forum' do
+    login_required
 	textarea = Forum.create(post: params[:forum], user_id: current_user.id)
 	redirect '/forum'
 end
 
 
 get '/question' do
+    login_required
 	@current_question = Question.order("RANDOM()").first
 	@answers = Answer.all
 	erb :question
 end
 
 get '/question/:answer_id' do
+    login_required
 	params[:answer_id]
 	erb :answer
 end
