@@ -29,7 +29,7 @@ end
 
 register Sinatra::SimpleAuthentication
 
-
+# beginning of routes
 get '/' do 
 	login_required
 	erb :index
