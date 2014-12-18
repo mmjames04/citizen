@@ -30,6 +30,20 @@ header h1{
 	
 }
 
+.next{
+	text-decoration: underline;
+}
+
+.begin_button{
+	text-decoration: underline;
+}
+
+.firstcharacter {
+	color: #225E9A; 
+	font-size: 20px; 
+	font-family: Georgia;
+}
+
 .answer{
 	display: block;
 }
@@ -89,6 +103,7 @@ section{
 	clear:both;
 	width: 75%;
 	display: inline-block;
+	font-size: small;
 }
 
 a{
@@ -96,7 +111,6 @@ a{
 	color: black;
 
 }
-
 
 footer{
 	font-size: x-small;
