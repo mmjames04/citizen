@@ -182,7 +182,7 @@ Answer.delete_all
 			{answer: "Democratic", question_id: 41},
 			{answer: "Republican", question_id: 41},
 			{answer: "Democratic", question_id: 42},
-			{answer: "John Boehner", question_id: 43},
+			**{answer: "John Boehner", question_id: 43},
 			{answer: "Citizens eighteen (18) and older can vote", question_id: 44},
 			{answer: "You don't have to pay a poll tax to vote.", question_id: 44},
 			{answer: "Any citizen can vote.", question_id: 44},

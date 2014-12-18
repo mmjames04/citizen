@@ -9,20 +9,20 @@
 </form>
 
 
-<p>Display all posts in descending order (newest on top)</p>
+<p>All posts (newest on top)</p>
 
 <ul>
 	<% @forums.each do |forum| %>
-		<div>
-			<li>
+		<div class="forum">
+			<li class="poster">
 			<% poster = User.find(forum.user_id) %>
 			<% user_poster = poster.email.split('@') %>
-			<%= user_poster.first %>
+			<%= user_poster.first.capitalize %>
 			</li>
-			<li>
+			<li class="date">
 			<%= Kronic.format(forum.created_at) %>
 			</li>
-			<li>
+			<li class="post">
 			<%= forum.post %>
 			</li>
 		</div>

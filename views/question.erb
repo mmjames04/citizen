@@ -1,11 +1,14 @@
-<p>Question </p>
+<p>Please select one correct answer: </p>
 
-
+<div class="question">
 <%= @current_question.question %>
+</div>
 
+<% all_answers = [] %>
 <% Answer.where(question_id: @current_question.id).find_each do |answer| %>
-<a href='/<%= answer.id %>'> <%= answer.answer %> </a>
-<% end %>
+<a class="answer" href='/question/<%= answer.id %>' > <%= answer.answer %>
+<% end %> </a>
 
-
+<div class="quit">
 <a href='/quiz'>Quit</a>
+</div>
