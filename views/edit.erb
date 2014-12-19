@@ -2,10 +2,17 @@
 
 <h1>Edit your post...</h1>
 
-<form method="post" action="/edit/<%= @post.id %>">
-<textarea id="POST-name" name="forum" cols="25" rows="5">
-<%= @post.post %>
-</textarea><br>
+<% if current_user.id == @post.user_id %>
+
+	<form method="post" action="/edit/<%= @post.id %>">
+	<textarea id="POST-name" name="forum" cols="25" rows="5">
+	<%= @post.post %>
+	</textarea><br>
 	<input type="hidden" name="_method" value="put">
 	<button type="submit">Update</button>
-</form>
+	</form>
+<% else %>
+	<p> Sorry, you are not allowed to edit other people's posts. </p>
+<% end %>
+
+<a href='/forum'>Return to Forum</a>

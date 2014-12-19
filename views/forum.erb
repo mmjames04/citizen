@@ -25,9 +25,10 @@ Enter your post here...255 characters or less...
 			<li class="post">
 			<%= forum.post %>
 			</li>
-			
-			<a href='/edit/<%= forum.id %>'>Edit Post</a>
-			<a href='/delete/<%= forum.id %>'>Delete Post</a>
+			<div>
+			<a class="edit" href='/edit/<%= forum.id %>'>Edit Post</a>
+			<a class="delete" href='/delete/<%= forum.id %>'>Delete Post</a>
+			</div>
 		</div>
 		<% end %>
 </ul>

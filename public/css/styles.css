@@ -68,7 +68,6 @@ header h1{
 .forum{
 	border: 1px solid black;
 	margin: 10px;
-	height: 100px;
 }
 
 .poster{
@@ -85,10 +84,23 @@ header h1{
 	font-size: small;
 }
 
+ul div div{
+	border-top: 1px solid black;
+}
+
+.edit{
+	margin-right: 25px;
+}
+
+.delete{
+	margin-left: 25px;
+}
+
 .post{
 	display: block;
 	clear: both;
 	border-top: 1px solid black;
+	height: 100px;
 	}
 
 .cit_quiz{
